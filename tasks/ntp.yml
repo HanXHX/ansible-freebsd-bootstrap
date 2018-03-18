@@ -1,0 +1,35 @@
+---
+
+#- name: ASSERT | validated package
+#  assert:
+#    that: 'dbs_ntp_pkg == "openntpd" or dbs_ntp_pkg == "ntp"'
+
+- name: PKGNG | Install NTP daemon
+  pkgng:
+    name: "{{ dbs_ntp_pkg }}"
+    state: present
+
+#- block:
+#
+#  - name: TEMPLATE | Deploy OpenNTPd configuration file
+#    template:
+#      src: etc/openntpd/ntpd.conf.j2
+#      dest: /etc/openntpd/ntpd.conf
+#    notify: restart openntpd
+#
+#  when: dbs_ntp_pkg == 'openntpd'
+
+- block:
+
+  - name: TEMPLATE | Deploy NTPd configuration file
+    template:
+      src: etc/ntp.conf.j2
+      dest: /etc/ntp.conf
+    notify: restart ntpd
+
+  - name: SERVICE | Enable NTP service
+    service:
+      name: ntpd
+      enabled: yes
+
+  when: dbs_ntp_pkg == 'ntp'

@@ -1,0 +1,20 @@
+---
+
+- block:
+
+  - name: COMMAND | Fetch ports
+    command: portsnap fetch --interactive
+    args:
+      creates: /var/db/portsnap/INDEX
+
+  - name: SHELL | Extract ports
+    shell: portsnap extract > /dev/null
+    args:
+      creates: /usr/ports
+
+  when: dbs_ports
+
+- name: PKGNG | Install packages
+  pkgng:
+    name: "{{ item }}"
+  with_items: "{{ dbs_packages }}"

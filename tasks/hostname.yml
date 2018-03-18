@@ -1,0 +1,17 @@
+---
+
+- name: HOSTNAME
+  hostname:
+    name: "{{ dbs_hostname }}"
+
+- name: LINEINFILE | hostname in /etc/rc.conf
+  lineinfile:
+    regexp: '^hostname="'
+    line: 'hostname="{{ dbs_hostname }}"'
+    dest: /etc/rc.conf
+
+- name: TEMPLATE | Cleanup /etc/hosts
+  template:
+    src: etc/hosts.j2
+    dest: /etc/hosts
+  when: dbs_clean_hosts

@@ -1,0 +1,35 @@
+---
+
+dbs_packages:
+  - bash
+  - bash-completion
+  - bind-tools
+  - binutils
+  - bmon
+  - curl
+  - gawk
+  - gnupg
+  - git
+  - htop
+  - hping
+  - jq
+  - lsof
+  - lynx
+  - most
+  - mutt
+  - netcat
+  - nmap
+  - parallel
+  - pv
+  - py27-glances
+  - py27-pip
+  - py27-pycurl
+  - pwgen
+  - reptyr
+  - rsync
+  - screen
+  - sudo
+  - swaks
+  - tcpdump
+  - unzip
+  - vim

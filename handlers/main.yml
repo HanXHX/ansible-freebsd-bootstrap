@@ -1,0 +1,17 @@
+---
+
+#- name: restart openntpd
+#  service:
+#    name: openntpd
+#    state: restarted
+
+- name: restart ntpd
+  service:
+    name: ntpd
+    state: restarted
+
+#- name: restart cron
+#  service: name=cron state=restarted
+#
+#- name: restart rsyslog
+#  service: name=rsyslog state=restarted
