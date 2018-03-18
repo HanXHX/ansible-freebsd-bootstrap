@@ -12,6 +12,14 @@
     args:
       creates: /usr/ports
 
+  - name: PKGNG | Install ports related tools
+    pkgng:
+      name: "{{ item }}"
+    with_items:
+      - portless
+      - portmaster
+      - portupgrade
+
   when: dbs_ports
 
 - name: PKGNG | Install packages
