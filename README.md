@@ -1,7 +1,7 @@
 Ansible FreeBSD bootstrap role
 ==============================
 
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.freebsd-bootstrap-blue.svg)](https://galaxy.ansible.com/HanXHX/freebsd-bootstrap) [![Build Status](https://travis-ci.org/HanXHX/ansible-freebsd-bootstrap.svg?branch=master)](https://travis-ci.org/HanXHX/ansible-freebsd-bootstrap)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.freebsd--bootstrap-blue.svg)](https://galaxy.ansible.com/HanXHX/freebsd-bootstrap) [![Build Status](https://travis-ci.org/HanXHX/ansible-freebsd-bootstrap.svg?branch=master)](https://travis-ci.org/HanXHX/ansible-freebsd-bootstrap)
 
 This role bootstraps FreeBSD server:
 
