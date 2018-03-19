@@ -17,3 +17,16 @@
     value: "{{ item.value }}"
     state: present
   with_dict: "{{ fbs_sysctl_config }}"
+
+- block:
+
+  - name: PKGNG | Install microcode
+    pkgng:
+      name: devcpu-data
+
+  - name: SERVICE | Enable microcode service
+    service:
+      name: microcode_update
+      enabled: yes
+
+  when: fbs_microcode

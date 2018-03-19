@@ -16,6 +16,7 @@ fbs_set_locale: true
 fbs_set_timezone: true
 fbs_set_ntp: true
 fbs_ports: false
+fbs_microcode: true
 
 # -------------------------
 # NTPd configuration
