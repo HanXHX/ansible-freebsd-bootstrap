@@ -23,7 +23,7 @@ filegen clockstats file clockstats type day enable
 # pick a different set every time it starts up.  Please consider joining the
 # pool: <http://www.pool.ntp.org/join.html>
 
-{% for h in dbs_ntp_hosts %}
+{% for h in fbs_ntp_hosts %}
 server {{ h }} iburst
 {% endfor %}
 

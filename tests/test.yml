@@ -2,17 +2,17 @@
 
 - hosts: all
   vars:
-    dbs_ports: true
-    dbs_timezone: 'America/Havana'
-    dbs_uninstall_packages:
+    fbs_ports: true
+    fbs_timezone: 'America/Havana'
+    fbs_uninstall_packages:
       - 'atop'
-    dbs_groups:
+    fbs_groups:
       - name: 'administrator'
       - name: 'superdaemon'
         system: yes
       - name: 'regis'
         state: 'absent'
-    dbs_users:
+    fbs_users:
       - name: 'hanx'
         sudo: true
         ssh_keys:
@@ -29,8 +29,8 @@
         shell: '/bin/bash'
       - name: 'regis'
         state: 'absent'
-    dbs_ntp_pkg: 'ntp'
-    dbs_sysctl_config:
+    fbs_ntp_pkg: 'ntp'
+    fbs_sysctl_config:
       'kern.ipc.somaxconn': 4096
 
   roles:

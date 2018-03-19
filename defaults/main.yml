@@ -3,24 +3,24 @@
 # -------------------------
 # System configuration
 # -------------------------
-dbs_hostname: 'freebsd-boostrap.local'
-dbs_timezone: 'Etc/UTC'
-dbs_use_dotfiles: true
+fbs_hostname: 'freebsd-boostrap.local'
+fbs_timezone: 'Etc/UTC'
+fbs_use_dotfiles: true
 
 # -------------------------
 # Role setup
 # -------------------------
-dbs_set_hostname: true
-dbs_clean_hosts: true
-dbs_set_locale: true
-dbs_set_timezone: true
-dbs_set_ntp: true
-dbs_ports: false
+fbs_set_hostname: true
+fbs_clean_hosts: true
+fbs_set_locale: true
+fbs_set_timezone: true
+fbs_set_ntp: true
+fbs_ports: false
 
 # -------------------------
 # NTPd configuration
 # -------------------------
-dbs_ntp_hosts:
+fbs_ntp_hosts:
   - '0.europe.pool.ntp.org'
   - '1.europe.pool.ntp.org'
   - '2.europe.pool.ntp.org'
@@ -29,10 +29,10 @@ dbs_ntp_hosts:
 # -------------------------
 # Users/Groups
 # -------------------------
-dbs_users: []
-dbs_groups: []
+fbs_users: []
+fbs_groups: []
 
 # -------------------------
 # Sysctl
 # -------------------------
-dbs_sysctl_config: {}
+fbs_sysctl_config: {}

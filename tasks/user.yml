@@ -5,7 +5,7 @@
     name: "{{ item.name }}"
     system: "{{ item.system | default('no') }}"
   with_items:
-    - "{{ dbs_groups }}"
+    - "{{ fbs_groups }}"
   when: item.state is not defined or item.state == 'present'
 
 - name: USER | Add users to the system
@@ -20,20 +20,20 @@
     state: "{{ item.state | default('present') }}"
     password: "{% if item.password is defined %}{{ item.password }}{% elif item.clear_password is defined%}{{ item.clear_password | password_hash('sha512') }}{% else %}{{ omit }}{% endif %}"
     update_password: "{{ item.update_password | default(omit) }}"
-  with_items: "{{ dbs_users }}"
+  with_items: "{{ fbs_users }}"
 
 - name: GROUP | Delete groups to the system
   group:
     name: "{{ item.name }}"
     state: absent
-  with_items: "{{ dbs_groups }}"
+  with_items: "{{ fbs_groups }}"
   when: item.state is defined and item.state == 'absent'
 
 - name: USER | Add to group
   user:
     name: "{{ item.name }}"
     group: "{{ item.group }}"
-  with_items: "{{ dbs_users }}"
+  with_items: "{{ fbs_users }}"
   when: >
     item.group is defined and
     (item.state is not defined or item.state == 'present')
@@ -43,7 +43,7 @@
     user: "{{ item.0.name }}"
     key: "{{ item.1 }}"
   with_subelements:
-    - "{{ dbs_users }}"
+    - "{{ fbs_users }}"
     - ssh_keys
     - flags:
       skip_missing: true

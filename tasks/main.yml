@@ -8,19 +8,19 @@
 
 - name: INCLUDE | Set hostname
   include: hostname.yml
-  when: dbs_set_hostname
+  when: fbs_set_hostname
 
 - name: INCLUDE | Manage system users
   include: user.yml
 
 - name: TIMEZONE | Set
   timezone:
-    name: "{{ dbs_timezone }}"
-  when: dbs_set_timezone
+    name: "{{ fbs_timezone }}"
+  when: fbs_set_timezone
 
 - name: INCLUDE | Install NTP damon
   include: ntp.yml
-  when: dbs_set_ntp
+  when: fbs_set_ntp
 
 - name: INCLUDE | Misc system configuration
   include: system.yml

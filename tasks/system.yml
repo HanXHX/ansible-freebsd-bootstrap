@@ -9,11 +9,11 @@
     - "vimrc"
     - "screenrc"
     - "gitconfig"
-  when: dbs_use_dotfiles
+  when: fbs_use_dotfiles
 
 - name: SYSCTL | Tuning
   sysctl:
     name: "{{ item.key }}"
     value: "{{ item.value }}"
     state: present
-  with_dict: "{{ dbs_sysctl_config }}"
+  with_dict: "{{ fbs_sysctl_config }}"

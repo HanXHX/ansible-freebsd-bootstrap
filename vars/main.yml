@@ -1,6 +1,6 @@
 ---
 
-dbs_packages:
+fbs_packages:
   - bash
   - bash-completion
   - bind-tools

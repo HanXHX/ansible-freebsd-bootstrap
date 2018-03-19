@@ -20,9 +20,9 @@
       - portmaster
       - portupgrade
 
-  when: dbs_ports
+  when: fbs_ports
 
 - name: PKGNG | Install packages
   pkgng:
     name: "{{ item }}"
-  with_items: "{{ dbs_packages }}"
+  with_items: "{{ fbs_packages }}"
