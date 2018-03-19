@@ -2,7 +2,7 @@
 
 - hosts: all
   vars:
-    dbs_ports: false
+    dbs_ports: true
     dbs_timezone: 'America/Havana'
     dbs_uninstall_packages:
       - 'atop'
